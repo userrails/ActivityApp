@@ -5,8 +5,8 @@ class EventBroadcastJob < ApplicationJob
   #   # Do something later
   # end
 
-  def perform(event)
-    ActionCable.server.broadcast 'activity_channel', message: render_event(event)
+  def perform(event, notification_count)
+    ActionCable.server.broadcast 'activity_channel', {message: render_event(event), notification_count: notification_count}
   end
 
   private

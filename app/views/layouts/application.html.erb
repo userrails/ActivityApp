@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <div id="notifications_count">
+      <%= render "layouts/notifications", count: @count %>
+    </div>
     <%= yield %>
   </body>
 </html>
