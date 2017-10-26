@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
   private
 
   def create_event
-    Event.create message: "A new comment has been created"
+    Event.create message: "A new comment #{self.comment} has been created"
   end
 end
